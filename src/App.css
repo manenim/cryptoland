@@ -14,6 +14,8 @@
   box-sizing: border-box;
 }
 
+
+
 a:hover{
   color: var(--pink) !important;
 }
@@ -21,6 +23,7 @@ a:hover{
 .app{
   display: flex;
   overflow: hidden;
+  /* background-color: var(--bgsecondary) !important; */
 }
 
 .navbar{
@@ -29,9 +32,6 @@ a:hover{
 }
 
 .main{
-  height: auto;
-  background: red;
-  z-index: 300;
   flex: 0.8;
   width: 100%;
   
@@ -81,18 +81,24 @@ a:hover{
 @media screen and (max-width:1300px){
   .main{
       margin-left: 50px;
+      background-color: var(--bgSecondary) !important;
+
   }
 }
 
 @media screen and (max-width:1170px){
   .main{
       margin-left: 50px;
+      background-color: var(--bgSecondary) !important;
+
   }
 }
 
 @media screen and (max-width:1000px){
   .main{
       margin-left: 100px;
+      background-color: var(--bgSecondary) !important;
+
   }
 }
 
@@ -306,7 +312,7 @@ padding: 0px 20px;
 width: 70%;
 }
 
-.news-image-container .img{
+.news-image-container img{
   width:100px;
   height:100px;
 }
