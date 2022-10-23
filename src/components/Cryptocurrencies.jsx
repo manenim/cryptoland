@@ -1,9 +1,10 @@
-import { Card, Col, Row } from 'antd';
 import millify from 'millify';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useGetCryptosQuery } from '../services/cryptoApi';
+import { Card, Col, Row, Typography } from 'antd'
 
+const { Title } = Typography
 
 
 const Cryptocurrencies = ({simplified }) => {
@@ -27,12 +28,15 @@ const Cryptocurrencies = ({simplified }) => {
   console.log(cryptos);
   return (
     <>
+            
+
     {!simplified && <div className="search-crypto">
-      <input type="text" placeholder="Search Cryptocurrency" onChange={(e) => setcryptos(cryptos.filter((currency) => currency.name.toLowerCase().includes(e.target.value)))}/>
+    <Title level={2} className="heading center">Search Your Favourite Crytos</Title>
+      <input type="text" className="search-crypto-input"  placeholder="Search Cryptocurrency" onChange={(e) => e.target.value && setcryptos(cryptos.filter((currency) => (currency.name.toLowerCase().includes(e.target.value))))}/>
     </div>}
       <Row gutter={[32, 32]} className="crypto-card-container">
         {cryptos?.map((currency) => (
-          <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.uuid}>
+          <Col xs={24} sm={12} md={6} lg={6} className="crypto-card" key={currency.uuid}>
             <Link to={`/crypto/${currency.uuid}`}>
               <Card title = {`${currency.rank}. ${currency.name}`} extra={<img className="crypto-image" src={currency.iconUrl} />} hoverable>
                 <p>Price: {millify(currency.price)}</p>

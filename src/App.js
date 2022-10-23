@@ -6,6 +6,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
+    <div className="App">
     <div className="app">
       <div className="navbar">
         <Navbar />
@@ -21,19 +22,20 @@ function App() {
           </Routes>
         </Layout>
       
+      </div>
+    </div>
         <div className="footer">
           <Typography.Title level={5} style = {{color: "white", textAlign: "center"}}>
-            cryptoverse <br />
+            cryptonia <br />
             All rights reserved
           </Typography.Title>
           <Space>
             <Link to = "/">Home</Link>
-            <Link to = "/exchanges">Exchanges</Link>
+            {/* <Link to = "/exchanges">Exchanges</Link> */}
             <Link to = "/news">News</Link>
           </Space>
         </div>
-      </div>
-    </div>
+        </div>
   );
 }
 

@@ -34,7 +34,9 @@ a:hover{
 .main{
   flex: 0.8;
   width: 100%;
-  
+  background-color: #f0f2f5;
+  padding-top: 20px;
+
 }
 .routes{
   padding: 20px;
@@ -78,27 +80,38 @@ a:hover{
   align-items: center;
 }
 
-@media screen and (max-width:1300px){
+@media screen and (max-width:1500px){
   .main{
-      margin-left: 50px;
-      background-color: var(--bgSecondary) !important;
+      padding-left: 1rem;
+      /* background-color: var(--bgSecondary) !important; */
 
   }
+  .show-more{
+    display: block;
+    font-size: .5rem;
+  }
+
 }
 
 @media screen and (max-width:1170px){
   .main{
-      margin-left: 50px;
-      background-color: var(--bgSecondary) !important;
+    padding-left: 4rem;
+      /* background-color: var(--bgSecondary) !important; */
 
+  }
+  .show-more{
+    display: none;
   }
 }
 
 @media screen and (max-width:1000px){
   .main{
-      margin-left: 100px;
-      background-color: var(--bgSecondary) !important;
+    padding-left: 8rem;
+      /* background-color: var(--bgSecondary) !important; */
 
+  }
+  .show-more{
+    display: none;
   }
 }
 
@@ -115,9 +128,12 @@ a:hover{
   .main{
       
       flex: 1;
-      margin-top: 90px;
+      background-color: #f0f2f5;
+
+      padding-top: 120px;
       margin-left: 0px;
-      margin-right: 10px;
+      padding-left: 1rem;
+      /* margin-right: 10px; */
   }
 
   .nav-container{
@@ -140,7 +156,7 @@ a:hover{
       font-size: 1.4rem !important;
   }
   .show-more{
-      font-size: 1.3rem !important;
+      font-size: .8rem !important;
   }
 }
 
@@ -300,6 +316,8 @@ padding: 0px 20px;
 
 .select-news{
   width: 180px;
+  height: 40px;
+  margin: auto;
 }
 .news-card{
   min-height: 300px !important;
@@ -364,7 +382,14 @@ width: 70%;
 }
 .search-crypto{
   margin: 20px auto 30px auto;
-  width: 250px;
+  width: 35%;
+}
+.search-crypto-input{
+  padding: .5rem;
+  padding-left: 1rem;
+  width: 100%;
+  border-radius: 40px;
+  border: 1px solid var(--border);
 }
 .crypto-card-container{
   min-height: 65vh !important;
@@ -379,7 +404,9 @@ width: 70%;
   width: 200px !important;
   margin-top: 20px !important;
 }
-
+.center{
+  text-align: center;
+}
 .footer {
   background-color: #001529;
   display: flex;

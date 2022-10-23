@@ -4,6 +4,7 @@ import moment from 'moment/moment';
 import React, { useState } from 'react'
 import { useGetCryptosQuery } from '../services/cryptoApi';
 import { useGetCryptoNewsQuery } from '../services/cryptoNewsApi'
+import Loader from './Loader';
 
 const { Title, Text } = Typography
 const { Option } = Select 
@@ -20,14 +21,18 @@ const News = ({simplified}) => {
   }
   const {data: cryptoNews } = useGetCryptoNewsQuery({newsCategory, count: simplified ? 6 : 12})
 
-  if(!cryptoNews?.value) return 'Loading...'
+  if(!cryptoNews?.value) return <Loader />
   console.log("hello", cryptoNews.value)
   return (
+    <>
     
 
+              
     <Row gutter={[24, 24]}>
+
       {!simplified && (
         <Col span = {24}>
+          <Title level={2} className="heading center">Get The latest Crypto News</Title>
           <Select 
           showSearch
           className='select-news'
@@ -64,7 +69,9 @@ const News = ({simplified}) => {
         </Col>
       ))}
     </Row>
+  </>
   )
+
   // return (
   //   <div className="">
   //     {cryptoNews.value.map((news, i) => (
